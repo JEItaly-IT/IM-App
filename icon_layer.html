@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <title>pydeck</title>
+        <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v1.13.0/mapbox-gl.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" />
+    <script src='https://cdn.jsdelivr.net/npm/@deck.gl/jupyter-widget@~8.8.*/dist/index.js'></script>
+    <style>
+    body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+#deck-container {
+  width: 100vw;
+  height: 100vh;
+}
+
+#deck-container canvas {
+  z-index: 1;
+  background: none;
+}
+    </style>
+  </head>
+  <body>
+    <div id="deck-container">
+    </div>
+  </body>
+  <script>
+    const container = document.getElementById('deck-container');
+    const jsonInput = {
+  "initialViewState": {
+    "latitude": 41.58,
+    "longitude": 12.7442,
+    "zoom": 4.8
+  },
+  "layers": [
+    {
+      "@@type": "IconLayer",
+      "data": [
+        {
+          "icon_data": "C:\\Users\\fabio\\OneDrive\\Desktop\\Repositories_github\\Web_App_JEITALY\\icons\\JEB.png",
+          "lat": 45.704336096261,
+          "lon": 9.6608,
+          "tags": "JEB Consulting"
+        },
+        {
+          "icon_data": "C:\\Users\\fabio\\OneDrive\\Desktop\\Repositories_github\\Web_App_JEITALY\\icons\\JEBE.png",
+          "lat": 43.7209660791224,
+          "lon": 10.4025284058379,
+          "tags": "Jebe Sant'Anna"
+        },
+        {
+          "icon_data": "C:\\Users\\fabio\\OneDrive\\Desktop\\Repositories_github\\Web_App_JEITALY\\icons\\JEBO.png",
+          "lat": 44.4962011677306,
+          "lon": 11.3540926248965,
+          "tags": "JEBO"
+        },
+        {
+          "icon_data": "C:\\Users\\fabio\\OneDrive\\Desktop\\Repositories_github\\Web_App_JEITALY\\icons\\JEBS.png",
+          "lat": 41.1314779958578,
+          "lon": 14.7776735824917,
+          "tags": "JEBS Consulting"
+        },
+        {
+          "icon_data": "C:\\Users\\fabio\\OneDrive\\Desktop\\Repositories_github\\Web_App_JEITALY\\icons\\JEBV.png",
+          "lat": 45.4373360182636,
+          "lon": 11.0045808561702,
+          "tags": "JEBV"
+        },
+        {
+          "icon_data": "C:\\Users\\fabio\\OneDrive\\Desktop\\Repositories_github\\Web_App_JEITALY\\icons\\JECAL.png",
+          "lat": 39.3617159287539,
+          "lon": 16.2260867824291,
+          "tags": "JECAL"
+        },
+        {
+          "icon_data": "C:\\Users\\fabio\\OneDrive\\Desktop\\Repositories_github\\Web_App_JEITALY\\icons\\JECATT.png",
+          "lat": 45.4628912565294,
+          "lon": 9.1768282709487,
+          "tags": "JECatt"
+        },
+        {
+          "icon_data": "C:\\Users\\fabio\\OneDrive\\Desktop\\Repositories_github\\Web_App_JEITALY\\icons\\JECO.png",
+          "lat": 45.1880013252354,
+          "lon": 9.1518010221103,
+          "tags": "Jeco Pavia"
+        },
+        {
+          "icon_data": "C:\\Users\\fabio\\OneDrive\\Desktop\\Repositories_github\\Web_App_JEITALY\\icons\\JECOMM.png",
+          "lat": 45.4623191792265,
+          "lon": 9.22308855375967,
+          "tags": "JECoMM"
+        },
+        {
+          "icon_data": "C:\\Users\\fabio\\OneDrive\\Desktop\\Repositories_github\\Web_App_JEITALY\\icons\\JEF.png",
+          "lat": 40.8406553287877,
+          "lon": 14.1840516340344,
+          "tags": "JEF Napoli"
+        }
+      ],
+      "getPosition": "@@=[lon, lat]",
+      "getSize": 3,
+      "icon": "@@=icon_data",
+      "id": "948789f4-10d0-4643-ac57-1297415cb7be",
+      "pickable": true,
+      "sizeScale": 15
+    }
+  ],
+  "mapProvider": "carto",
+  "mapStyle": "mapbox://styles/mapbox/light-v9",
+  "mapboxKey": "",
+  "views": [
+    {
+      "@@type": "MapView",
+      "controller": true
+    }
+  ]
+};
+    const tooltip = {'text': '{tags}'};
+    const customLibraries = null;
+    const configuration = null;
+
+    const deckInstance = createDeck({
+                  container,
+      jsonInput,
+      tooltip,
+      customLibraries,
+      configuration
+    });
+
+  </script>
+</html>
