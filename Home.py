@@ -20,8 +20,7 @@ from login import log_with_mail
 #          unsafe_allow_html=True
 #      )
 
-logo_JE = Image.open('JE_logo.png')
-st.set_page_config(page_title='Portale competenze JE Italy', layout = 'wide', page_icon = logo_JE, initial_sidebar_state = 'auto')
+st.set_page_config(page_title='Portale competenze JE Italy', layout = 'wide', initial_sidebar_state = 'auto')
 hide_streamlit_style = """
             <style>
             #MainMenu {visibility: hidden;}
@@ -45,7 +44,6 @@ if log_with_mail():
                 garantendo dunque la continua affidabilità dei dati qui presentati.')
 
     col1, col2, col3 = st.columns(3)
-    col2.image(logo_JE)
 
     col1.markdown('Powered by **JESAP Consulting**')
 
