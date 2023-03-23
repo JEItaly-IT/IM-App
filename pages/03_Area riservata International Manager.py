@@ -11,8 +11,7 @@ from math import nan
 from login import log_with_mail
 
 # --- Layout comune a tutte le pagine ---
-logo_JE = Image.open('JE_logo.png')
-st.set_page_config(page_title='Portale competenze JE Italy', layout = 'wide', page_icon = logo_JE, initial_sidebar_state = 'auto')
+st.set_page_config(page_title='Portale competenze JE Italy', layout = 'wide', initial_sidebar_state = 'auto')
 hide_streamlit_style = """
             <style>
             footer {visibility: hidden;}
