@@ -1,3 +1,4 @@
 streamlit 
 pandas 
 firebase
+validate_email
