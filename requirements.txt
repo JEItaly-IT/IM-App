@@ -3,3 +3,4 @@ pandas
 firebase
 validate_email
 firebase_admin
+streamlit_authenticator
