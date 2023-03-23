@@ -2,3 +2,4 @@ streamlit
 pandas 
 firebase
 validate_email
+firebase_admin
