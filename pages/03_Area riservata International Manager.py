@@ -93,7 +93,7 @@ if log_with_mail():
             st.experimental_rerun()
 
 
-        st.experimental_memo()
+        st.cache_data()
 
         nome_completo = st.session_state['utente']
 
