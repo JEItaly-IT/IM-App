@@ -6,7 +6,6 @@ from PIL import Image
 from login import log_with_mail
 
 
-
 # st.markdown(
 #          f"""
 #          <style>
@@ -20,7 +19,9 @@ from login import log_with_mail
 #          unsafe_allow_html=True
 #      )
 
-st.set_page_config(page_title='Portale competenze JE Italy', layout = 'wide', initial_sidebar_state = 'auto')
+logo_JE = Image.open('JE_logo.png')
+#  logo_jesap = Image.open('Jesap.png')
+st.set_page_config(page_title='Portale competenze JE Italy', layout = 'wide', page_icon = logo_JE, initial_sidebar_state = 'auto')
 hide_streamlit_style = """
             <style>
             #MainMenu {visibility: hidden;}
@@ -29,24 +30,52 @@ hide_streamlit_style = """
             """
 st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 
+st.header('Portale competenze Junior Enterprise italiane')
 
-if log_with_mail():
+col1, col2, col3 = st.columns(3)
 
-    st.header('Portale competenze Junior Enterprise italiane')
+col2.image(logo_JE, width=200)
 
-    st.markdown('Benvenuti nella **Dashboard Interattiva delle Junior Enterprise Italiane**. Questa piattaforma vi offre un accesso\
+
+
+st.markdown('Benvenuti nella **Dashboard Interattiva delle Junior Enterprise Italiane**. Questa piattaforma vi offre un accesso\
         completo e dettagliato a tutte le informazioni sulle **Junior Enterprise** italiane, inclusi data di fondazione, numero di associati,\
             punti di forza, competenze e molto altro. Con questa dashboard, è possibile visualizzare facilmente le informazioni riguardo le\
                 JE e confrontare i loro dati per avere una panoramica completa sul network italiano.')
 
-    st.markdown('Inoltre, la piattaforma offre anche la possibilità di aggiornare le informazioni sulle JE, riservata\
+st.markdown('Inoltre, la piattaforma offre anche la possibilità di aggiornare le informazioni sulle JE, riservata\
             agli **International Manager**. Ciò significa che è possibile mantenere i dati sempre aggiornati e precisi,\
                 garantendo dunque la continua affidabilità dei dati qui presentati.')
 
-    col1, col2, col3 = st.columns(3)
+#st.markdown('<p style="padding: 1px 0;">Powered by <b>JESAP Consulting</b></p>', unsafe_allow_html=True)
+#col4, col5, col6 = st.columns(3)
 
-    col1.markdown('Powered by **JESAP Consulting**')
+#col6.image(logo_jesap, caption='Powered by JESAP Consulting', width=150)
+#col6.write('Powered by JESAP Consulting')
 
+def get_css():
+    with open("stile.css") as f:
+        css = f.read()
+    return css
+
+# Aggiunge lo stile del CSS 
+def set_css():
+    css = get_css()
+    st.markdown(f"<style>{css}</style>", unsafe_allow_html=True)
+
+st.markdown("""
+	<head>
+		<link rel="stylesheet" type="text/css" href="stile.css">
+	</head>
+	<body>
+		<div class="mioDiv">
+			<img src="https://jesap.it/wp-content/uploads/2021/05/Civetta-definitivo-gradiente-_aggiornato.png" width="100" height="100">
+			<p>Powered by Jesap Consulting</p>
+		</div>
+	</body>
+""", unsafe_allow_html=True)
+
+set_css()
 
 
 

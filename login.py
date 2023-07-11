@@ -16,7 +16,7 @@ def log_with_mail():
             mail= st.sidebar.text_input("Inserisci il tuo indirizzo e-mail relativo alla tua JE:")
             passwordd= st.sidebar.text_input("Inserisci password:",  type="password")
             st.session_state['vm'] = None
-            vm=validate_email(mail)
+            vm=validate_email(mail) 
             
             button = st.sidebar.button("Accedi")
             
@@ -30,4 +30,4 @@ def log_with_mail():
                     st.warning('⚠️mail o password errate')  
                         
     return st.session_state['vm']
-    
+
